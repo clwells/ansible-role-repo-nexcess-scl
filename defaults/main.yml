@@ -1,0 +1,5 @@
+---
+
+scl_repo_file: "/etc/yum.repos.d/nexcess-scl.repo"
+scl_repo_gpg_key_url: "http://rpms.nexcess.net/RPM-GPG-KEY-NEXCESS"
+scl_repo_enabled: "1"

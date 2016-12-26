@@ -1,0 +1,20 @@
+---
+
+- name: Check for Existing Repo
+  stat: path={{ scl_repo_file }}
+  register: scl_repo_file_result
+
+- name: Install the Nexcess SCL Repo
+  template:
+    src="nexcess-scl.repo.j2"
+    dest="{{ scl_repo_file }}"
+    owner=root
+    group=root
+    mode=0644
+  when: not scl_repo_file_result.stat.exists
+
+- name: Import the Nexcess SCL GPG Key
+  rpm_key:
+    key: "{{ scl_repo_gpg_key_url }}"
+    state: present
+  when: not scl_repo_file_result.stat.exists
