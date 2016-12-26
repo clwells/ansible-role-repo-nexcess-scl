@@ -17,7 +17,7 @@ None.
 ## Add to Requirements
 
     - src: https://github.com/nexcess/ansible-role-repo-nexcess-scl.git
-      name: nexcess.repo.scl
+      name: nexcess.repo-scl
 
 ## Example Playbook
 
